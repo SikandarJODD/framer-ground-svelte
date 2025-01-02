@@ -12,12 +12,12 @@
 	};
 </script>
 
-<nav class="bg-background border-b">
+<nav class="bg-background border-b sticky top-0">
 	<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-6">
 		<div class="flex h-16 items-center justify-between">
 			<div class="flex items-center">
 				<div class="shrink-0">
-					<h3 class="font-semibold">Framer Ground Svelte</h3>
+					<a href='/' class="font-semibold">Framer Ground Svelte</a>
 				</div>
 				<div class="hidden sm:ml-6 sm:block">
 					<div class="flex space-x-4">
@@ -77,7 +77,7 @@
 					<span class="sr-only">Open main menu</span>
 					<!--
               Icon when menu is closed.
-  
+
               Menu open: "hidden", Menu closed: "block"
             -->
 					<svg
@@ -97,7 +97,7 @@
 					</svg>
 					<!--
               Icon when menu is open.
-  
+
               Menu open: "block", Menu closed: "hidden"
             -->
 					<svg
