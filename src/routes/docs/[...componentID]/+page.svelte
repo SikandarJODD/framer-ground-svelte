@@ -4,7 +4,9 @@
   import Badge from '$lib/components/ui/badge/badge.svelte';
 
   let compID = $derived($page.params.componentID.split('/').pop());
-  let comp = all_comp.filter((c) => c.id === compID)[0] || all_comp[0];
+  let comp = $derived.by(() => {
+    return all_comp.filter((c) => c.id === compID)[0] || all_comp[0];
+  });
 </script>
 
 <h1 class="text-3xl font-bold">
@@ -17,7 +19,7 @@
     {/each}
   {/if}
 </div>
-<div class="mt-4 w-full border rounded-2xl min-h-[500px] flex justify-center ">
+<div class="mt-4 w-full border rounded-2xl min-h-[500px] flex justify-center">
   {#if comp.comp}
     {@const MainComponent = comp.comp}
     <MainComponent />

@@ -29,7 +29,7 @@
   };
 </script>
 
-<div>
+<div class="flex justify-center items-center h-full my-auto">
   <nav class="border px-3 py-2.5">
     <ul class="flex space-x-1">
       {#each navs as nav, i}

@@ -43,7 +43,7 @@
       <Button size="sm" variant="secondary" onclick={changeToFlex}>Flex</Button>
     </div>
   </div>
-  <div class="{selected === 'grid' ? 'grid grid-cols-3 gap-3' : 'flex flex-col gap-3'} ">
+  <div class="{selected === 'grid' ? 'grid grid-cols-1 md:grid-cols-3 gap-3' : 'flex flex-col gap-3'} ">
     {#each list as item, index}
       <div class="border p-3 rounded-md cards" style:--transition-name={`card-${index}`}>
         <div class="flex items-center gap-2 justify-between">
