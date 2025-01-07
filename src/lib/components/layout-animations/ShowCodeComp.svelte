@@ -9,7 +9,7 @@
   let htmlCode = $state('');
   onMount(async () => {
     htmlCode = await codeToHtml(code, {
-      lang: 'javascript',
+      lang: 'svelte',
       theme: 'vesper'
     });
   });
