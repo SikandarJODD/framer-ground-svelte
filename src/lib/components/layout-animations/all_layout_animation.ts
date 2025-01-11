@@ -13,7 +13,7 @@ import SharedViewAnimationCode from "./SharedViewAnimation.svelte?raw";
 export type LayoutComponent = {
     id: string;
     name: string;
-    comp: Component;
+    comp: any;
     code: string;
 }
 

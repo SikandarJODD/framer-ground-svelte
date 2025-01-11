@@ -19,7 +19,11 @@
     {/each}
   {/if}
 </div>
-<div class="mt-4 w-full border rounded-2xl min-h-[500px] flex justify-center">
+<div
+  class="mt-4 w-full border rounded-2xl min-h-[500px] flex justify-center {comp.isCentered
+    ? 'items-center'
+    : 'items-start'}"
+>
   {#if comp.comp}
     {@const MainComponent = comp.comp}
     <MainComponent />

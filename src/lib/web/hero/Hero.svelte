@@ -1,9 +1,28 @@
 <script>
+  import DashStrokeGrid from '$lib/components/magic-ui/DashStrokeGrid.svelte';
+  import GridPattern from '$lib/components/magic-ui/GridPattern.svelte';
   import Button from '$lib/components/ui/button/button.svelte';
+  import { cn } from '$lib/utils';
 </script>
 
-<div class="relative isolate px-4 md:px-6 md:pt-14 lg:px-8">
-  <div class="mx-auto max-w-2xl py-6 sm:py-48 lg:py-10">
+<div class="relative isolate h-[90vh]">
+  <GridPattern
+    width={40}
+    height={40}
+    strokeDashArray="4 2"
+    fillColor="rgb(255 255 255 / 0.35)"
+    class={cn('[mask-image:linear-gradient(to_bottom_right,white,transparent,transparent)]')}
+  />
+  <GridPattern
+    width={40}
+    height={40}
+    strokeDashArray="4 2"
+    x={11}
+    y={17}
+    fillColor="rgb(255 255 255 / 0.3)"
+    class={cn('[mask-image:linear-gradient(to_top_left,white,transparent,transparent)]')}
+  />
+  <div class="mx-auto max-w-2xl py-28 sm:py-48 lg:py-28">
     <div class="hidden sm:mb-8 sm:flex sm:justify-center">
       <a
         href="/docs/buttons"
