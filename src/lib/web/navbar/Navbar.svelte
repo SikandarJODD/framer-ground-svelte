@@ -18,11 +18,7 @@
     <div class="flex h-16 items-center justify-between">
       <div class="flex items-center">
         <div class="shrink-0">
-          <a
-            href="/"
-            aria-label="home"
-            class="font-semibold text-pink-500 shadow-xl shadow-pink-700"
-          >
+          <a href="/" aria-label="home" class=" text-pink-500 shadow-xl shadow-pink-700">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -55,7 +51,12 @@
       <div class="hidden sm:ml-6 sm:block">
         <div class="flex items-center space-x-1">
           <!-- Github Button -->
-          <Button size="icon" variant="ghost">
+          <Button
+            href="https://github.com/SikandarJODD/framer-ground-svelte"
+            size="icon"
+            target="_blank"
+            variant="ghost"
+          >
             <svg
               viewBox="0 0 256 250"
               width="256"
@@ -70,7 +71,7 @@
             </svg>
           </Button>
           <!-- Twitter (X) Button  -->
-          <Button size="icon" variant="ghost" href="https://x.com/Sikandar_Bhide">
+          <Button size="icon" variant="ghost" href="https://x.com/Sikandar_Bhide" target="_blank">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="1200"
@@ -105,7 +106,7 @@
               Menu open: "hidden", Menu closed: "block"
             -->
           <svg
-            class="block size-6"
+            class="{isMobileMenu ? 'hidden' : 'block'} size-6"
             fill="none"
             viewBox="0 0 24 24"
             stroke-width="1.5"
@@ -125,7 +126,7 @@
               Menu open: "block", Menu closed: "hidden"
             -->
           <svg
-            class="hidden size-6"
+            class="{isMobileMenu ? 'block' : 'hidden'} size-6"
             fill="none"
             viewBox="0 0 24 24"
             stroke-width="1.5"
@@ -142,11 +143,7 @@
 
   <!-- Mobile Menu -->
   {#if isMobileMenu}
-    <div
-      transition:slide={{ duration: 250 }}
-      class="sm:hidden {isMobileMenu ? 'block' : 'hidden'}"
-      id="mobile-menu"
-    >
+    <div transition:slide={{ duration: 250 }} class="sm:hidden" id="mobile-menu">
       <div class="space-y-1 px-2 pb-3 pt-2">
         {#each web.menu as nav}
           <a

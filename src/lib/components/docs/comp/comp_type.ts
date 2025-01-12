@@ -4,7 +4,8 @@ export type CompType = {
     id: string;
     name: string;
     comp: Component;
-    tags: string[];
+    tags?: string[];
     desc?: string;
     code?: string;
+    isCentered?: boolean;
 }

@@ -1,6 +1,7 @@
 import type { CompType } from "../comp_type";
 import BirthdayCard from "./birthday/BirthdayCard.svelte";
 import OverView from "./overview/OverView.svelte";
+import PaymentMethod from "./payment-method/PaymentMethod.svelte";
 
 
 export let all_cards: CompType[] = [
@@ -14,6 +15,13 @@ export let all_cards: CompType[] = [
         id: 'overview',
         name: 'Overview Card',
         comp: OverView,
-        tags: ['overview', 'card','view-transition API'],
+        tags: ['overview', 'card', 'view-transition API'],
     },
+    {
+        id: 'payment-method',
+        name: 'Payment Method',
+        comp: PaymentMethod,
+        tags: ['payment', 'card'],
+        isCentered: true,
+    }
 ]

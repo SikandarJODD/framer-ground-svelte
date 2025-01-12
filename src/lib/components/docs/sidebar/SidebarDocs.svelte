@@ -1,44 +1,47 @@
 <script lang="ts">
+  import Badge from '$lib/components/ui/badge/badge.svelte';
+
   let { children } = $props();
   type Comp = {
     name: string;
     subcomps: SubComp[];
   };
   type SubComp = {
-    type?: string;
     name: string;
     url: string;
+    isNew?: boolean;
   };
   let comps: Comp[] = [
-    // {
-    //   name: 'Button',
-    //   subcomps: [
-    //     {
-    //       name: 'Checkout',
-    //       url: '/docs/button/checkout'
-    //     },
-    //     {
-    //       name: 'Create',
-    //       url: '/docs/button/create'
-    //     },
-    //     {
-    //       name: 'Delete',
-    //       url: '/docs/button/delete'
-    //     },
-    //     {
-    //       name: 'Github',
-    //       url: '/docs/button/github'
-    //     },
-    //     {
-    //       name: 'Second Brain',
-    //       url: '/docs/button/second-brain'
-    //     },
-    //     {
-    //       name: 'Sparkles',
-    //       url: '/docs/button/sparkles'
-    //     }
-    //   ]
-    // },
+    {
+      name: 'Button',
+      subcomps: [
+        {
+          name: 'Star border',
+          url: '/docs/button/star-border',
+          isNew: true
+        }
+        // {
+        //   name: 'Create',
+        //   url: '/docs/button/create'
+        // },
+        // {
+        //   name: 'Delete',
+        //   url: '/docs/button/delete'
+        // },
+        // {
+        //   name: 'Github',
+        //   url: '/docs/button/github'
+        // },
+        // {
+        //   name: 'Second Brain',
+        //   url: '/docs/button/second-brain'
+        // },
+        // {
+        //   name: 'Sparkles',
+        //   url: '/docs/button/sparkles'
+        // }
+      ]
+    },
     {
       name: 'Cards',
       subcomps: [
@@ -49,6 +52,11 @@
         {
           name: 'Overview',
           url: '/docs/card/overview'
+        },
+        {
+          name: 'Payment Method',
+          url: '/docs/card/payment-method',
+          isNew: true
         }
       ]
     },
@@ -118,6 +126,11 @@
         {
           name: 'Vercel',
           url: '/docs/navbars/vercel'
+        },
+        {
+          name: 'Tubelight Navbar',
+          url: '/docs/navbars/tubelight-navbar',
+          isNew: true
         }
       ]
     }
@@ -134,16 +147,7 @@
     role="dialog"
     aria-modal="true"
   >
-    <!--
-        Off-canvas menu backdrop, show/hide based on off-canvas menu state.
 
-        Entering: "transition-opacity ease-linear duration-300"
-          From: "opacity-0"
-          To: "opacity-100"
-        Leaving: "transition-opacity ease-linear duration-300"
-          From: "opacity-100"
-          To: "opacity-0"
-      -->
     <div
       class=" {isMobileMenu
         ? ' translate-x-0'
@@ -156,31 +160,13 @@
         ? ' translate-x-0'
         : '-translate-x-full'} transition ease-in-out duration-300 transform fixed inset-0 flex"
     >
-      <!--
-          Off-canvas menu, show/hide based on off-canvas menu state.
 
-          Entering: "transition ease-in-out duration-300 transform"
-            From: "-translate-x-full"
-            To: "translate-x-0"
-          Leaving: "transition ease-in-out duration-300 transform"
-            From: "translate-x-0"
-            To: "-translate-x-full"
-        -->
       <div
         class="{isMobileMenu
           ? 'opacity-100'
           : 'opacity-0'} ease-in-out duration-300 relative mr-16 flex w-full max-w-xs flex-1"
       >
-        <!--
-            Close button, show/hide based on off-canvas menu state.
 
-            Entering: "ease-in-out duration-300"
-              From: "opacity-0"
-              To: "opacity-100"
-            Leaving: "ease-in-out duration-300"
-              From: "opacity-100"
-              To: "opacity-0"
-          -->
         <div class="absolute left-full top-0 flex w-16 justify-center pt-5">
           <button onclick={() => (isMobileMenu = false)} type="button" class="-m-2.5 p-2.5">
             <span class="sr-only">Close sidebar</span>
@@ -221,6 +207,13 @@
                           class="text-sm/6 font-normal text-muted-foreground"
                         >
                           {item.name}
+                          {#if item.isNew}
+                            <span
+                              class="text-xs rounded-full bg-primary/90 size-6 flex justify-center items-center"
+                            >
+                              New
+                            </span>
+                          {/if}
                         </a>
                       </li>
                     {/each}
@@ -250,23 +243,8 @@
           {#each comps as comp}
             <li>
               <div class="text-md font-semibold text-primary/90 flex items-center gap-1.5">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="14"
-                  height="14"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  stroke="currentColor"
-                  stroke-width="1.6"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="lucide lucide-squircle rotate-45"
-                  ><path d="M12 3c7.2 0 9 1.8 9 9s-1.8 9-9 9-9-1.8-9-9 1.8-9 9-9" /></svg
-                >
                 {comp.name}
-                <span
-                  class="text-xs rounded-full bg-zinc-800 size-6 flex justify-center items-center"
-                >
+                <span class="text-xs rounded-full bg-muted size-6 flex justify-center items-center">
                   {comp.subcomps.length}
                 </span>
               </div>
@@ -275,11 +253,17 @@
                   <li>
                     <a
                       href={subcomp.url}
-                      class="group flex gap-x-3 rounded-md p-2 text-sm text-muted-foreground transition-all duration-150 hover:text-white"
+                      class="group flex gap-x-2 rounded-md p-2 text-sm text-muted-foreground transition-all duration-150 dark:hover:text-white hover:text-black"
                     >
                       <span class="truncate">
                         {subcomp.name}
                       </span>
+                      {#if subcomp.isNew}
+                        <Badge
+                          class="h-5 w-10 flex justify-center items-center text-[10px] "
+                          variant="pink">New</Badge
+                        >
+                      {/if}
                     </a>
                   </li>
                 {/each}
