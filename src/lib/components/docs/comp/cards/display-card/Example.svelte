@@ -43,18 +43,10 @@
   ];
 </script>
 
-<div class="flex justify-center items-center h-screen">
-  <!-- <DisplayCard
-    title="Sveltekit"
-    description="web development for the rest of us."
-    class="border-orange-400/10 bg-orange-900/20 hover:bg-orange-800/20 hover:border-orange-400/30 duration-300"
-    iconclass="shadow-md border border-orange-400/20 bg-orange-500/10"
-  /> -->
-  <div
-    class="grid [grid-template-areas:'stack'] place-items-center opacity-100 animate-in fade-in-0 duration-700"
-  >
-    {#each defaultCards as item}
-      <DisplayCard {...item} />
-    {/each}
-  </div>
+<div
+  class="grid [grid-template-areas:'stack'] place-items-center opacity-100 animate-in fade-in-0 duration-700"
+>
+  {#each defaultCards as item}
+    <DisplayCard {...item} />
+  {/each}
 </div>

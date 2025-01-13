@@ -57,6 +57,11 @@
           name: 'Payment Method',
           url: '/docs/card/payment-method',
           isNew: true
+        },
+        {
+          name: 'Display Card',
+          url: '/docs/card/display-card',
+          isNew: true
         }
       ]
     },
@@ -147,7 +152,6 @@
     role="dialog"
     aria-modal="true"
   >
-
     <div
       class=" {isMobileMenu
         ? ' translate-x-0'
@@ -160,13 +164,11 @@
         ? ' translate-x-0'
         : '-translate-x-full'} transition ease-in-out duration-300 transform fixed inset-0 flex"
     >
-
       <div
         class="{isMobileMenu
           ? 'opacity-100'
           : 'opacity-0'} ease-in-out duration-300 relative mr-16 flex w-full max-w-xs flex-1"
       >
-
         <div class="absolute left-full top-0 flex w-16 justify-center pt-5">
           <button onclick={() => (isMobileMenu = false)} type="button" class="-m-2.5 p-2.5">
             <span class="sr-only">Close sidebar</span>

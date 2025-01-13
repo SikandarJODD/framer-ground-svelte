@@ -73,7 +73,7 @@
       >
     </div>
   </div>
-  <div class="mt-2 space-y-2 p-4 bg-white rounded-lg h-auto" style="transition: height 0.6s ease;">
+  <div class="mt-2 space-y-2 p-4 bg-white rounded-lg " >
     {#each payments_methods as method, index}
       <div
         class="{selected === index

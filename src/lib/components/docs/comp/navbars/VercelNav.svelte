@@ -36,13 +36,13 @@
         <!-- svelte-ignore a11y_click_events_have_key_events -->
         <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
         <li onclick={() => changeSelect(i)} class="cursor-pointer relative px-4 py-2">
-          <span class="z-50 {selected === i ? 'text-black nav_name' : 'text-white'} ">
+          <span class="z-50 {selected === i ? 'text-white dark:text-black nav_name' : 'dark:text-white'} ">
             {nav.name}
           </span>
           {#if selected === i}
             <span
               id="highlight"
-              class="absolute h-full bg-white w-full left-0 top-0 -z-10 rounded-sm"
+              class="absolute h-full dark:bg-white bg-zinc-900 w-full left-0 top-0 -z-10 rounded-sm"
             >
             </span>
           {/if}

@@ -6,7 +6,7 @@
   let web = {
     menu: [
       { name: 'Get Started', link: '/' },
-      { name: 'Components', link: '/docs' },
+      { name: 'Components', link: '/docs/navbars/tubelight-navbar' },
       { name: 'View', link: '/layout/page-wipe' }
     ]
   };
