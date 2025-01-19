@@ -11,6 +11,7 @@
     url: string;
     isNew?: boolean;
   };
+
   let comps: Comp[] = [
     {
       name: 'Button',
@@ -18,7 +19,6 @@
         {
           name: 'Star border',
           url: '/docs/button/star-border',
-          isNew: true
         }
         // {
         //   name: 'Create',
@@ -56,13 +56,27 @@
         {
           name: 'Payment Method',
           url: '/docs/card/payment-method',
-          isNew: true
         },
         {
           name: 'Display Card',
           url: '/docs/card/display-card',
           isNew: true
-        }
+        },
+        {
+          name: 'Feature Card',
+          url: '/docs/card/feature-card',
+          isNew: true
+        },
+        {
+          name: 'Task Widget Card',
+          url: '/docs/card/task-widget',
+          isNew: true
+        },
+        {
+          name: 'Collection Grid',
+          url: '/docs/card/collection-grid',
+          isNew: true
+        },
       ]
     },
     // {
@@ -87,44 +101,6 @@
         }
       ]
     },
-    // {
-    //   name: 'Menu',
-    //   subcomps: [
-    //     {
-    //       name: 'Circular',
-    //       url: '/docs/menu/circular'
-    //     },
-    //     {
-    //       name: 'Hamburger',
-    //       url: '/docs/menu/hamburger'
-    //     }
-    //   ]
-    // },
-    // {
-    //   name: 'Inputs',
-    //   subcomps: [
-    //     {
-    //       name: 'Google',
-    //       url: '/docs/inputs/google'
-    //     },
-    //     {
-    //       name: 'IMessage',
-    //       url: '/docs/inputs/imessage'
-    //     },
-    //     {
-    //       name: 'Password Strength',
-    //       url: '/docs/inputs/password-strength'
-    //     },
-    //     {
-    //       name: 'Validity',
-    //       url: '/docs/inputs/validity'
-    //     },
-    //     {
-    //       name: 'Verifier',
-    //       url: '/docs/inputs/verifier'
-    //     }
-    //   ]
-    // },
     {
       name: 'Navbars',
       subcomps: [
@@ -135,7 +111,6 @@
         {
           name: 'Tubelight Navbar',
           url: '/docs/navbars/tubelight-navbar',
-          isNew: true
         }
       ]
     }
