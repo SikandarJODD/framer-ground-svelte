@@ -20,7 +20,7 @@
   {/if}
 </div>
 <div
-  class="mt-4 w-full border rounded-2xl min-h-[500px] flex justify-center {comp.isCentered
+  class="mt-4 w-full min-h-[600px] flex justify-center {comp.isCentered
     ? 'items-center'
     : 'items-start'}"
 >
